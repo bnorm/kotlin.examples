@@ -1,25 +1,49 @@
 package basics.dsl
 
 
+//
 
 
+//
 
 
+//
 
 
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
 
 
 fun html(block: Html.() -> Unit): Unit = TODO()
 
-fun main(args: Array<String>) {
+fun main() {
   html {
-    head {
-    }
+    head {}
     body {
       table {
+        head {} // is this valid?
         tr {
-          td {}
-          td {}
+          // loops!
+          repeat(5) {
+            td {}
+          }
         }
       }
     }
@@ -27,42 +51,62 @@ fun main(args: Array<String>) {
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
+
+
+//
+
+
+//@DslMarker
+annotation class HtmlDsl
+
+@HtmlDsl
 interface Html {
   fun head(block: Head.() -> Unit)
   fun body(block: Body.() -> Unit)
 }
 
+@HtmlDsl
 interface Head
 
+@HtmlDsl
 interface Body {
   fun table(block: Table.() -> Unit)
 }
 
+@HtmlDsl
 interface Table {
   fun tr(block: Tr.() -> Unit)
 }
 
+@HtmlDsl
 interface Tr {
   fun td(block: Td.() -> Unit)
 }
 
+@HtmlDsl
 interface Td
-
-
-

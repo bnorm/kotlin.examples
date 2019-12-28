@@ -1,10 +1,34 @@
 package basics.syntax
 
 
+//
 
 
+//
 
 
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
 
 
 /**
@@ -17,28 +41,34 @@ val lambda: (Any) -> String = { obj: Any ->
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
-
-
+//
 
 
 /**
@@ -55,7 +85,7 @@ fun mapToString(list: Iterable<Any>, transformer: (Any) -> String): List<String>
   return destination
 }
 
-fun useMapToString(args: Array<String>) {
+fun useMapToString() {
   val values = listOf(1, 2, 3, 4)
 
   // All equivalent
@@ -67,26 +97,39 @@ fun useMapToString(args: Array<String>) {
   mapToString(values) {
     it.toString()
   }
+
+  mapToString(values, Any::toString)
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
+
+//
 
 
 /**
@@ -96,40 +139,52 @@ fun useMapToString(args: Array<String>) {
  * 3. Extension functions only have public access
  */
 fun List<Int>.skip(n: Int): List<Int> {
-  if (n >= size) return emptyList()
+  if (n >= this.size) return emptyList()
 
-  val list = ArrayList<Int>(size - n)
-  for (item in listIterator(size - n))
+  val list = mutableListOf(this.size - n)
+  for (item in this.listIterator(this.size - n))
     list.add(item)
 
   return list
 }
 
-fun useSkip(args: Array<String>) {
+fun useSkip() {
   val values = listOf(1, 2, 3, 4)
   println(values.skip(2))
+
+//  val strings = listOf("a", "b", "c")
+//  println(strings.skip(2))
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
+//
 
 
 /**
@@ -139,8 +194,6 @@ fun useSkip(args: Array<String>) {
  * 3. Function marked as `inline`?
  */
 inline fun <T> List<T>.skipWhile(predicate: (T) -> Boolean): List<T> {
-  val list = ArrayList<T>()
-
   val iter = listIterator()
   for (item in iter) {
     if (!predicate(item)) {
@@ -149,6 +202,7 @@ inline fun <T> List<T>.skipWhile(predicate: (T) -> Boolean): List<T> {
     }
   }
 
+  val list = mutableListOf<T>()
   for (item in iter) {
     list.add(item)
   }
@@ -156,33 +210,40 @@ inline fun <T> List<T>.skipWhile(predicate: (T) -> Boolean): List<T> {
   return list
 }
 
-fun useSkipWhile(args: Array<String>) {
+fun useSkipWhile() {
   val values = listOf(1, 2, 3, 4)
   println(values.skipWhile { it <= 2 })
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
-
+//
 
 
 /**
@@ -194,7 +255,7 @@ infix fun <T> T.validate(predicate: T.() -> Boolean): T? {
   return if (predicate(this)) this else null
 }
 
-fun useMaybe(args: Array<String>) {
+fun useMaybe() {
   val value = 41
 
   // Equivalent
@@ -202,22 +263,3 @@ fun useMaybe(args: Array<String>) {
   println(value validate { this >= 42 })
   //           ^ - Where's the '.'?
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

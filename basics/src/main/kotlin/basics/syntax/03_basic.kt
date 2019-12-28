@@ -1,9 +1,34 @@
 package basics.syntax
 
 
+//
 
 
+//
 
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
 
 
 /**
@@ -16,27 +41,34 @@ fun sum(a: Int, b: Int): Int {
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
-
+//
 
 
 /**
@@ -46,30 +78,34 @@ fun sum(a: Int, b: Int): Int {
 fun multiply(a: Int, b: Int) = a * b
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
-
-
-
-
+//
 
 
 /**
@@ -81,31 +117,34 @@ fun max(a: Int, b: Int): Int {
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
-
-
-
-
-
+//
 
 
 /**
@@ -117,35 +156,40 @@ fun max(a: Int, b: Int): Int {
 fun max(values: List<Int>): Int? {
   var max: Int? = null
   for (i in 0..values.size - 1) {
-    max =  max(max ?: Int.MIN_VALUE, values[i])
+    max = max(max ?: Int.MIN_VALUE, values[i])
   }
   return max
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
-
-
-
+//
 
 
 /**
@@ -164,26 +208,34 @@ fun name(obj: Any): String {
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
+//
 
 
 /**
@@ -211,22 +263,78 @@ fun joinToString(
   return buffer.toString()
 }
 
-fun main(args: Array<String>) {
+fun main() {
   val names = listOf("Ed", "Marc", "Mark", "Mike")
   println(joinToString(names, prefix = "Our Founders are ", separator = " and "))
 }
 
 
-
-
-
-
-
-
-
-
-
-
+//
 
 
 //
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+fun exceptions() {
+  try {
+    throw Exception()
+  } catch (t: Throwable) {
+    t.printStackTrace()
+  }
+}
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+

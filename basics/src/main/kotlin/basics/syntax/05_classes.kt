@@ -1,14 +1,34 @@
 package basics.syntax
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
 
 
 /**
@@ -26,7 +46,7 @@ class Employee(
   var email: String,
   private var socialSecurity: String
 ) {
-  val fullName: String by lazy { "$firstName $lastName"}
+  val fullName: String by lazy { "$firstName $lastName" }
 
   val emailHeader: String
     get() = "$fullName <$email>"
@@ -34,7 +54,7 @@ class Employee(
   fun validateSocial(): Boolean = socialSecurity.isNotBlank()
 }
 
-fun main(args: Array<String>) {
+fun main() {
   val brian = Employee("Brian", "Norman", "Brian.Norman@Dell.com", "")
 
   println(brian.emailHeader)
@@ -48,26 +68,34 @@ fun main(args: Array<String>) {
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
+//
 
 
 /**
@@ -81,31 +109,39 @@ data class Person(
   var email: String?
 )
 
-fun usePerson(args: Array<String>) {
+fun usePerson() {
   val (firstName, lastName, email) = Person("Brian", "Norman", "brian_norman@atavium.com")
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
-
-
+//
 
 
 /**
@@ -128,43 +164,45 @@ interface Consumer<in T> {
 
 class Pipe<T>(private var value: T) : Producer<T>(), Consumer<T> {
   override fun produce() = value
-  override fun consume(t: T) { value = t }
+  override fun consume(t: T) {
+    value = t
+  }
 }
 
-fun usePipe(args: Array<String>) {
+fun usePipe() {
   val pipe: Pipe<CharSequence> = Pipe("1")
   val producer: Producer<Any> = pipe
   val consumer: Consumer<String> = pipe
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
 
 
 //
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+

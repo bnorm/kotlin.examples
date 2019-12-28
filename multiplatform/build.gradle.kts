@@ -4,13 +4,7 @@ plugins {
 
 kotlin {
   jvm()
-  js {
-    nodejs {
-      testTask {
-        useMocha()
-      }
-    }
-  }
+  js()
 
   sourceSets {
     val commonMain by getting {

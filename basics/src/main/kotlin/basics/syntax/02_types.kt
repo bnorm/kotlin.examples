@@ -1,16 +1,41 @@
 package basics.syntax
 
 
+//
 
 
+//
 
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
 
 
 /**
  * Things to observe:
  * 1. The different types of the defined local variables
  */
-fun main(args: Array<String>) {
+fun main() {
   var first: String = "BRIAN"
   var last: String? = "NORMAN"
 
@@ -27,21 +52,34 @@ fun main(args: Array<String>) {
 }
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
+
+//
+
+
+//
 
 
 /**
@@ -53,23 +91,34 @@ fun name() = "Brian Norman"
 val anything: Any? = name()
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
 
+//
 
+
+//
 
 
 /**
@@ -85,18 +134,40 @@ fun loopForever(): Nothing {
 
 val something: String = loopForever()
 
-
-
-
-
-
-
-
-
-
-
-
-
+fun why(something: Any) {
+//  val str: String = return
+//  val str = something as? String ?: return
+//  val str = something as? String ?: throw Exception("")
+}
 
 
 //
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+

@@ -1,5 +1,36 @@
 package basics.syntax
 
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
 /**
  * Things to observe:
  * 0. No semicolons!
@@ -11,7 +42,7 @@ package basics.syntax
  * 6. No type listed for greeting, inferred from assignment
  * 7. String templating for print statement
  */
-fun main(args: Array<String>) {
+fun main() {
   val greeting = "Hello"
   println("$greeting, $name")
 }

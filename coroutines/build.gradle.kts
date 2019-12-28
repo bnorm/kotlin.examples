@@ -8,6 +8,7 @@ dependencies {
   val coroutinesVersion = "1.3.3"
 
   implementation(kotlin("stdlib"))
+  implementation(kotlin("script-runtime"))
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$coroutinesVersion")
 }
 
