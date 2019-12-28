@@ -8,7 +8,7 @@ plugins {
 }
 
 allprojects {
-  group = "com.bnorm.sandbox.kotlin"
+  group = "com.bnorm.examples.kotlin"
   version = "0.1-SNAPSHOT"
 
   repositories {
