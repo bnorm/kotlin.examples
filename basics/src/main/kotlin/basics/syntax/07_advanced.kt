@@ -1,5 +1,36 @@
 package basics.syntax
 
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
 // singleton objects
 
 // sealed classes
