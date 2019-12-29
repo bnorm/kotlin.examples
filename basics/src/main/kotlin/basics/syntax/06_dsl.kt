@@ -31,14 +31,17 @@ package basics.syntax
 //
 
 
-fun html(block: Html.() -> Unit): Unit = TODO()
+fun html(block: Html.() -> Unit): String {
+  val builder = StringBuilder()
+  builder.withTag("html") { Html(builder).block() }
+  return builder.toString()
+}
 
 fun main() {
-  html {
+  val html = html {
     head {}
     body {
       table {
-        head {} // is this valid?
         tr {
           // loops!
           repeat(5) {
@@ -48,6 +51,7 @@ fun main() {
       }
     }
   }
+  println(html)
 }
 
 
@@ -81,32 +85,61 @@ fun main() {
 //
 
 
-//@DslMarker
+@DslMarker
 annotation class HtmlDsl
 
 @HtmlDsl
-interface Html {
-  fun head(block: Head.() -> Unit)
-  fun body(block: Body.() -> Unit)
+class Html(
+  private val builder: StringBuilder
+) {
+  fun head(block: Head.() -> Unit) {
+    builder.withTag("head") { Head(builder).block() }
+  }
+
+  fun body(block: Body.() -> Unit) {
+    builder.withTag("body") { Body(builder).block() }
+  }
 }
 
 @HtmlDsl
-interface Head
+class Head(
+  private val builder: StringBuilder
+)
 
 @HtmlDsl
-interface Body {
-  fun table(block: Table.() -> Unit)
+class Body(
+  private val builder: StringBuilder
+) {
+  fun table(block: Table.() -> Unit) {
+    builder.withTag("table") { Table(builder).block() }
+  }
 }
 
 @HtmlDsl
-interface Table {
-  fun tr(block: Tr.() -> Unit)
+class Table(
+  private val builder: StringBuilder
+) {
+  fun tr(block: Tr.() -> Unit) {
+    builder.withTag("tr") { Tr(builder).block() }
+  }
 }
 
 @HtmlDsl
-interface Tr {
-  fun td(block: Td.() -> Unit)
+class Tr(
+  private val builder: StringBuilder
+) {
+  fun td(block: Td.() -> Unit) {
+    builder.withTag("td") { Td(builder).block() }
+  }
 }
 
 @HtmlDsl
-interface Td
+class Td(
+  private val builder: StringBuilder
+)
+
+inline fun StringBuilder.withTag(tag: String, block: () -> Unit) {
+  append("<$tag>\n")
+  block()
+  append("</$tag>\n")
+}
