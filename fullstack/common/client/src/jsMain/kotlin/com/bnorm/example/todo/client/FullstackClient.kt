@@ -1,7 +1,7 @@
-package com.bnorm.example.fullstack.client
+package com.bnorm.example.todo.client
 
-import com.bnorm.example.fullstack.model.Todo
-import com.bnorm.example.fullstack.model.TodoPrototype
+import com.bnorm.example.todo.model.Todo
+import com.bnorm.example.todo.model.TodoPrototype
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
@@ -11,8 +11,8 @@ actual annotation class Path actual constructor(actual val value: String, actual
 actual annotation class Query actual constructor(actual val value: String, actual val encoded: Boolean)
 actual annotation class Body actual constructor()
 
-actual fun FullstackClient.Factory.createClient(url: String): FullstackClient {
-  return object : FullstackClient {
+actual fun TodoClient.Factory.createClient(url: String): TodoClient {
+  return object : TodoClient {
     override suspend fun getTodo(id: Int): Todo {
       val response = request("GET", "$url/todo/$id")
       return Json.plain.parse(Todo.serializer(), response)

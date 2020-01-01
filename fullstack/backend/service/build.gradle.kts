@@ -53,11 +53,11 @@ sourceSets {
 }
 val copyWebUi = tasks.register<Sync>("copyWebUi") {
   from(tasks.findByPath(":fullstack:frontend:web:jsBundle"))
-  into("$buildDir/ui/dist/fullstack-web")
+  into("$buildDir/ui/dist/todo-web")
 }
 tasks.findByPath("processResources")?.dependsOn(copyWebUi)
 
 application {
-  mainClassName = "com.bnorm.example.fullstack.service.MainKt"
+  mainClassName = "com.bnorm.example.todo.service.MainKt"
   applicationDefaultJvmArgs = listOf("-Dkotlinx.coroutines.debug=on")
 }

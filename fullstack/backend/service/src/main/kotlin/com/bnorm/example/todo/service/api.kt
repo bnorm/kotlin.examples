@@ -1,6 +1,6 @@
-package com.bnorm.example.fullstack.service
+package com.bnorm.example.todo.service
 
-import com.bnorm.example.fullstack.model.TodoPrototype
+import com.bnorm.example.todo.model.TodoPrototype
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.http.content.defaultResource
@@ -26,8 +26,8 @@ data class Todos(
 fun Application.api() {
   routing {
     static("/") {
-      resources("fullstack-web")
-      defaultResource("fullstack-web/index.html")
+      resources("todo-web")
+      defaultResource("todo-web/index.html")
     }
 
     route("/api/v1") {

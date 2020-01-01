@@ -1,4 +1,4 @@
-package com.bnorm.example.fullstack.model
+package com.bnorm.example.todo.model
 
 import kotlinx.serialization.Serializable
 

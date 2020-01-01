@@ -1,4 +1,4 @@
-package com.bnorm.example.fullstack.client
+package com.bnorm.example.todo.client
 
 import kotlinx.coroutines.await
 import org.w3c.fetch.RequestCredentials

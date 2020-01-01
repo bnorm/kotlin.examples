@@ -1,4 +1,4 @@
-package com.bnorm.example.fullstack.client
+package com.bnorm.example.todo.client
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -15,13 +15,13 @@ actual typealias Path = retrofit2.http.Path
 actual typealias Query = retrofit2.http.Query
 actual typealias Body = retrofit2.http.Body
 
-actual fun FullstackClient.Factory.createClient(url: String): FullstackClient =
+actual fun TodoClient.Factory.createClient(url: String): TodoClient =
   createClient(HttpUrl.get(url))
 
-fun FullstackClient.Factory.createClient(
+fun TodoClient.Factory.createClient(
   url: HttpUrl,
   client: OkHttpClient = OkHttpClient()
-): FullstackClient {
+): TodoClient {
   return Retrofit.Builder()
     .baseUrl(
       url.newBuilder()
@@ -34,5 +34,5 @@ fun FullstackClient.Factory.createClient(
     .addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))
     .validateEagerly(true)
     .build()
-    .create(FullstackClient::class.java)
+    .create(TodoClient::class.java)
 }

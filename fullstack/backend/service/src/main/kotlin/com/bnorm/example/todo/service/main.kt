@@ -1,4 +1,4 @@
-package com.bnorm.example.fullstack.service
+package com.bnorm.example.todo.service
 
 import io.ktor.application.call
 import io.ktor.application.install

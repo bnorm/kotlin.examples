@@ -1,7 +1,7 @@
-package com.bnorm.example.fullstack.client
+package com.bnorm.example.todo.client
 
-import com.bnorm.example.fullstack.model.Todo
-import com.bnorm.example.fullstack.model.TodoPrototype
+import com.bnorm.example.todo.model.Todo
+import com.bnorm.example.todo.model.TodoPrototype
 import kotlin.jvm.JvmSuppressWildcards
 
 expect annotation class GET(val value: String)
@@ -11,7 +11,7 @@ expect annotation class Query(val value: String, val encoded: Boolean = false)
 expect annotation class Body()
 
 @JvmSuppressWildcards
-interface FullstackClient {
+interface TodoClient {
   @GET("todo/{id}")
   suspend fun getTodo(@Path("id") id: Int): Todo
 
@@ -27,5 +27,5 @@ interface FullstackClient {
   companion object Factory
 }
 
-expect fun FullstackClient.Factory.createClient(url: String): FullstackClient
+expect fun TodoClient.Factory.createClient(url: String): TodoClient
 
