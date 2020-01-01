@@ -138,6 +138,37 @@ suspend fun doSomethingUsefulTwo(): Int {
   return 29
 }
 
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
 fun sync() = runBlocking<Unit> {
   val time = measureTimeMillis {
     val one = doSomethingUsefulOne()
@@ -147,6 +178,37 @@ fun sync() = runBlocking<Unit> {
   }
   println("Completed in $time ms")
 }
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
+
+//
+
 
 fun async() = runBlocking<Unit> {
   val time = measureTimeMillis {
