@@ -11,7 +11,7 @@ kotlin {
   }
 
   sourceSets {
-    val serializationRuntimeVersion = "0.14.0"
+    val serializationRuntimeVersion: String by rootProject.extra
 
     val commonMain by getting {
       dependencies {

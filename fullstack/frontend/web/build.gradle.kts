@@ -38,11 +38,13 @@ kotlin {
     // https://github.com/mkraynov/kfsad/blob/kotlin-1.3.40-preview/shared/build.gradle
     main {
       dependencies {
+        val coroutinesVersion: String by rootProject.extra
+
         implementation(project(":fullstack:common:model"))
         implementation(project(":fullstack:common:client"))
 
         implementation(kotlin("stdlib-js"))
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.3.3")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutinesVersion")
 
         implementation("org.jetbrains:kotlin-extensions:1.0.1-pre.89-kotlin-1.3.60")
         implementation("org.jetbrains:kotlin-react:16.9.0-pre.89-kotlin-1.3.60")

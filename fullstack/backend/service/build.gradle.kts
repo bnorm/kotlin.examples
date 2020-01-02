@@ -10,11 +10,11 @@ repositories {
 }
 
 dependencies {
-  val coroutinesVersion = "1.3.3"
-  val ktorVersion = "1.3.0-rc2"
-  val log4jVersion = "2.11.2"
-  val exposedVersion = "0.19.1"
-  val h2Version = "1.4.200"
+  val coroutinesVersion: String by rootProject.extra
+  val ktorVersion: String by rootProject.extra
+  val log4jVersion: String by rootProject.extra
+  val exposedVersion: String by rootProject.extra
+  val h2Version: String by rootProject.extra
 
   implementation(kotlin("stdlib"))
   implementation(kotlin("reflect"))
@@ -32,11 +32,11 @@ dependencies {
   implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-java-time:$exposedVersion")
-  runtime("com.h2database:h2:$h2Version")
+  runtimeOnly("com.h2database:h2:$h2Version")
 
   implementation("org.apache.logging.log4j:log4j-api:${log4jVersion}")
-  runtime("org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}")
-  runtime("org.apache.logging.log4j:log4j-core:${log4jVersion}")
+  runtimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}")
+  runtimeOnly("org.apache.logging.log4j:log4j-core:${log4jVersion}")
 }
 
 tasks.withType<KotlinCompile>().configureEach {
@@ -47,7 +47,7 @@ tasks.withType<KotlinCompile>().configureEach {
 sourceSets {
   main {
     resources {
-      setSrcDirs(getSrcDirs() + "$buildDir/ui/dist")
+      setSrcDirs(srcDirs + "$buildDir/ui/dist")
     }
   }
 }

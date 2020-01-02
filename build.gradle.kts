@@ -7,6 +7,13 @@ plugins {
   kotlin("plugin.serialization") version kotlinVersion apply false
 }
 
+val coroutinesVersion by extra("1.3.3")
+val ktorVersion by extra("1.3.0-rc2")
+val log4jVersion by extra("2.11.2")
+val exposedVersion by extra("0.19.1")
+val h2Version by extra("1.4.200")
+val serializationRuntimeVersion by extra("0.14.0")
+
 allprojects {
   group = "com.bnorm.examples.kotlin"
   version = "0.1-SNAPSHOT"

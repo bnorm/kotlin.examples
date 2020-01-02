@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-  val coroutinesVersion = "1.3.3"
+  val coroutinesVersion: String by rootProject.extra
 
   implementation(kotlin("stdlib"))
   implementation(kotlin("script-runtime"))
